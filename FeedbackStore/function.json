@@ -1,0 +1,23 @@
+{
+  "bindings": [
+    {
+      "name": "mySbMsg",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "topicName": "feedback",
+      "subscriptionName": "store",
+      "connection": "consumer",
+      "accessRights": "Listen"
+    },
+    {
+      "type": "documentDB",
+      "name": "outputDocument",
+      "databaseName": "Survey",
+      "collectionName": "Answers",
+      "createIfNotExists": false,
+      "connection": "facaval_DOCUMENTDB",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}

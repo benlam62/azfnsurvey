@@ -1,0 +1,20 @@
+{
+  "bindings": [
+    {
+      "name": "feedback",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "topicName": "feedback",
+      "subscriptionName": "notification",
+      "connection": "consumer",
+      "accessRights": "Listen"
+    },
+    {
+      "name": "notification",
+      "type": "twilioSMS",
+      "direction": "out",
+      "from": "3862591240"
+    }
+  ],
+  "disabled": false
+}
