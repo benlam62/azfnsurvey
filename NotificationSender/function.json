@@ -1,19 +1,17 @@
 {
   "bindings": [
     {
-      "name": "feedback",
-      "type": "serviceBusTrigger",
-      "direction": "in",
-      "topicName": "feedback",
-      "subscriptionName": "notification",
-      "connection": "consumer",
-      "accessRights": "Listen"
-    },
-    {
       "name": "notification",
       "type": "twilioSMS",
       "direction": "out",
-      "from": "3862591240"
+      "from": "5555555555"
+    },
+    {
+      "type": "queueTrigger",
+      "name": "feedbackItem",
+      "queueName": "notification",
+      "connection": "facaval_STORAGE",
+      "direction": "in"
     }
   ],
   "disabled": false

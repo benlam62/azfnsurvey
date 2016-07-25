@@ -1,22 +1,26 @@
 {
   "bindings": [
     {
-      "authLevel": "function",
-      "name": "req",
-      "type": "httpTrigger",
-      "direction": "in"
-    },
-    {
-      "name": "res",
-      "type": "http",
+      "type": "documentDB",
+      "name": "outputDocument",
+      "databaseName": "Survey",
+      "collectionName": "Answers",
+      "createIfNotExists": false,
+      "connection": "facaval_DOCUMENTDB",
       "direction": "out"
     },
     {
-      "type": "serviceBus",
-      "name": "outputSbMsg",
-      "topicName": "feedback",
-      "connection": "sender",
-      "accessRights": "Send",
+      "type": "queueTrigger",
+      "name": "feedbackItem",
+      "queueName": "processing",
+      "connection": "facaval_STORAGE",
+      "direction": "in"
+    },
+    {
+      "type": "queue",
+      "name": "notificationQueue",
+      "queueName": "notification",
+      "connection": "facaval_STORAGE",
       "direction": "out"
     }
   ],
